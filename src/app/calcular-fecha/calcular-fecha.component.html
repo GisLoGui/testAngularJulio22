@@ -1,0 +1,101 @@
+
+
+
+<div *ngIf="currentUser" class="container">
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/conversaciones">{{languageGlobal.conversaciones}} <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/calculaFecha">{{languageGlobal.calculaFecha}}</a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/form">{{languageGlobal.formulario}}</a>
+        </li>
+      </ul>
+   
+    </div>
+  </nav>
+
+  <br>
+
+
+  <div class="switch float-right " style="margin-top: -46px; color: white !important; position: relative; right: 70px;">
+    <label>
+      <span>{{languageGlobal.spanish}}</span>
+      <input type="checkbox" [(ngModel)]="isChecked" (change)="checkValue()">
+      <span class="lever" style="    margin-left: 5px; margin-right: 5px;"></span>
+      <span>{{languageGlobal.english}}</span>
+
+    </label>
+    <div class="btnLogOut" style="text-align: right; color: white!important;" fxShow="true">
+      <a style="background-color: cornflowerblue; color: white!important;" mat-button
+        (click)="logout()">{{languageGlobal.closeSession}}</a>
+    </div>
+
+  </div>
+
+
+
+
+
+<mat-form-field appearance="fill">
+  <mat-label>{{languageGlobal.seleccioneFecha}}</mat-label>
+  <input  onkeydown="return false"
+  matInput
+  [matDatepicker]="picker"
+  (dateChange)="validDateRange()"
+  [(ngModel)]="fechaInicial"
+  name="fechaInicial">
+  <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+
+<br>
+
+  <mat-form-field appearance="fill">
+      <mat-label>{{languageGlobal.seleccioneUnidad}}</mat-label>
+      <mat-select disableRipple (selectionChange)="unidad($event.value)">
+        <mat-option  value="1">{{languageGlobal.dia}}</mat-option>
+        <mat-option   value="2">{{languageGlobal.mes}}</mat-option>
+        <mat-option  value="3">{{languageGlobal.anio}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field style="width: 250px!important;" class="example-form-field" appearance="fill">
+      <mat-label>{{languageGlobal.ingreseCantidad}}</mat-label>
+      <input type="number" matInput [(ngModel)]="value">
+      <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <br>
+
+    <button (click)="agregar()"  mat-raised-button style="margin-bottom: 20px; margin-left: 80px!important; background-color: cornflowerblue!important; color: white!important;">Sumar</button>
+<br>
+    <mat-form-field style="width: 250px!important;" class="example-form-field" appearance="fill">
+      <mat-label>{{languageGlobal.nuevaFecha}}</mat-label>
+      <input  matInput type="text" [(ngModel)]="fechaFinal">
+   
+    </mat-form-field>
+
+    <span *ngIf="validacionDia">{{languageGlobal.yaNoDias}}</span>
+    <span *ngIf="validacionMes">{{languageGlobal.yaNoMeses}}</span>
+
+
+
+</div>
+

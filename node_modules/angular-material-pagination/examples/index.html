@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demo">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.10/angular-material.min.css"
+          rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+          rel="stylesheet"/>
+    <link href="../dist/angular-material-pagination.css">
+</head>
+<body>
+<div>
+    <pagination total="55" ng-model="page" limit="10"></pagination>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-animate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-aria.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-messages.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.10/angular-material.min.js"></script>
+<script src="../dist/angular-material-pagination.min.js"></script>
+<script>
+    angular.module("demo", [
+        'ngPagination'
+    ]).run([
+        '$rootScope',
+        function ($rootScope) {
+            $rootScope.page = 1;
+        }
+    ])
+</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+
+.login-page{
+    height: 100vh;
+    width: 100%;
+}
+
+.login-spacer{
+    height: 20vh;
+}
+
+
+.login-container{
+    margin: auto;
+    width: 300px;
+    padding: 2vh;
+    background-color: #fff;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+}
+
+#login-fab {
+	border-radius: 50%;
+    height: 56px;
+    margin: auto;
+    min-width: 56px;
+    width: 56px;
+    overflow: hidden;
+    background: #0e0b3f;
+    box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24);
+    margin-top: -35px;
+    text-align: center;
+    left: 0;
+    right: 0;
+}
+
+.mat-raised-button.mat-primary {
+    background: #0e0b3f!important;
+    margin-top: 30px;
+}
+.card-heading{
+    color: #0e0b3f!important;
+} 
+
+
+
+#lock-icon{
+    line-height: 56px;
+    color: #fff;
+    font-size: 9px;
+}
+.card-heading{
+    text-align: center;
+    color: rgba(0, 0, 0, 0.31);
+}
+
+.buttons .login{
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+.buttons .login > button{
+    width: 100%;
+}
+
+.buttons .register{
+    display: flex;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    justify-content: space-between;
+}
+
+.alert-danger{
+    width: 98%;
+    text-align: center;
+    color: red;
+    font-size: 13px;
+    padding-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+ 
+a:hover, a:active{
+    color: lightgray;
+}
+ 
+.nav-caption{
+    display: inline-block;
+    padding-left: 6px;
+}

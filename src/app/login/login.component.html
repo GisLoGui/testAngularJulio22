@@ -1,0 +1,39 @@
+﻿
+
+<div class="login-page">
+    <div class="login-spacer"></div>
+    <div class="login-container" style="width: 400px;">
+      <div id="login-fab" style="background-color: cornflowerblue!important; color: white!important;">
+        <i id="lock-icon" style="background-color: cornflowerblue!important; color: white!important;">TEST</i>
+      </div>
+      <h2 class="card-heading">
+        Login
+      </h2>
+      <div *ngIf="mensaje" [ngClass]="{ 'alert': mensaje, 'alert-success': mensaje.type === 'success', 'alert-danger': mensaje.type === 'error' }">{{mensaje.text}}</div>
+      <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field >
+          <input matInput placeholder="usuario" formControlName="user" >
+         
+        </mat-form-field>  
+   
+        <mat-form-field>
+          <input matInput type='password' placeholder="Password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && pattern.invalid }" >
+          <div>
+              <mdb-error *ngIf="pattern.invalid && (pattern.dirty || pattern.touched)">Password incorrecto</mdb-error>
+          </div> 
+        </mat-form-field>
+      
+      <div class="buttons">
+        <div class="login">
+          <button  mat-raised-button style="background-color: cornflowerblue!important; color: white!important;">Login</button>
+        </div>     
+      </div>
+
+    </form>
+    </div>
+  </div>
+  
+
+
+
+  

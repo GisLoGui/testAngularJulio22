@@ -1,0 +1,186 @@
+
+
+
+
+
+<div *ngIf="currentUser" class="container">
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/conversaciones">{{languageGlobal.conversaciones}} <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/calculaFecha">{{languageGlobal.calculaFecha}}</a>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/form">{{languageGlobal.formulario}}</a>
+          </li>
+        </ul>
+     
+      </div>
+    </nav>
+  
+    <br>
+  
+  
+    <div class="switch float-right " style="margin-top: -46px; color: white !important; position: relative; right: 70px;">
+      <label>
+        <span>{{languageGlobal.spanish}}</span>
+        <input type="checkbox" [(ngModel)]="isChecked" (change)="checkValue()">
+        <span class="lever" style="    margin-left: 5px; margin-right: 5px;"></span>
+        <span>{{languageGlobal.english}}</span>
+  
+      </label>
+      <div class="btnLogOut" style="text-align: right; color: white!important;" fxShow="true">
+        <a style="background-color: cornflowerblue; color: white!important;" mat-button
+          (click)="logout()">{{languageGlobal.closeSession}}</a>
+      </div>
+  
+    </div>
+    <br>
+<div>
+        <form [formGroup]="formulario">
+       
+            <!-- Nombre -->
+            <mat-form-field class="example-full-width">
+                <mat-label>{{languageGlobal.name}}</mat-label>
+                <input
+                  matInput
+                  [(ngModel)]="nombre"
+                  required
+                  class="form-control"
+                  pattern="[A-Za-z .ÁÉÍÓÚáéíóúñÑ]*"
+                  formControlName="nombre"
+                  maxlength="30"
+                  (change)="habilitar()" 
+                >
+                <mat-error>
+                  <div *ngIf="formulario.controls.nombre.invalid && (formulario.controls.nombre.dirty || formulario.controls.nombre.touched)" class="alert alert-danger">
+                    <mat-hint class="error" *ngIf="formulario.controls.nombreInvitado.errors.required">
+                        {{languageGlobal.nameR}}
+                    </mat-hint>
+                    <mat-hint class="error" *ngIf="formulario.controls.nombre.errors.pattern">
+                        {{languageGlobal.nameValidate}}
+          
+                    </mat-hint>
+                  </div>
+                </mat-error>
+              </mat-form-field>
+              <br>
+    
+               <!-- Apellido -->
+            <mat-form-field class="example-full-width">
+                <mat-label>{{languageGlobal.lastName}}</mat-label>
+                <input
+                  matInput
+                  [(ngModel)]="apellido"
+                  required
+                  class="form-control"
+                  pattern="[A-Za-z .ÁÉÍÓÚáéíóúñÑ]*"
+                  formControlName="apellido"
+                  maxlength="30"
+                  (change)="habilitar()" 
+                >
+                <mat-error>
+                  <div *ngIf="formulario.controls.apellido.invalid && (formulario.controls.apellido.dirty || formulario.controls.apellido.touched)" class="alert alert-danger">
+                    <mat-hint class="error" *ngIf="formulario.controls.apellido.errors.required">
+                        {{languageGlobal.lastNameR}}
+                    </mat-hint>
+                    <mat-hint class="error" *ngIf="formulario.controls.apellido.errors.pattern">
+                        {{languageGlobal.lastNameValidate}}
+                      
+                    </mat-hint>
+                  </div>
+                </mat-error>
+              </mat-form-field>
+              <br>
+    
+               <!-- Fumas -->
+              <mat-form-field>
+                <mat-label>{{languageGlobal.fumas}}</mat-label>
+                <mat-select (selectionChange)="valorFumas($event.value)"  matInput type="text" formControlName="fumas" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.fumas.errors }"  >
+                  <mat-option *ngFor="let option of optionFumas" [value]="option.id">{{ option.name }}
+                  </mat-option>
+                </mat-select>
+                <mat-error>
+                  <div *ngIf="submitted && f.fumas.errors" class="invalid-feedback">
+                    <div *ngIf="f.fumas.errors.required">{{languageGlobal.campoRequerido}}</div>
+                  </div>
+                </mat-error>
+              </mat-form-field>
+              <br>
+    
+              <!-- lectura -->
+              <mat-form-field>
+                <mat-label>{{languageGlobal.lecturap}}</mat-label>
+                <mat-select (selectionChange)="lecturas($event.value)" matInput type="text" formControlName="lectura" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.lectura.errors }"  >
+                  <mat-option *ngFor="let option of optionLectura" [value]="option.id">{{ option.name }}
+                  </mat-option>
+                </mat-select>
+                <mat-error>
+                  <div *ngIf="submitted && f.lectura.errors" class="invalid-feedback">
+                    <div *ngIf="f.lectura.errors.required">{{languageGlobal.campoRequerido}}</div>
+                  </div>
+                </mat-error>
+              </mat-form-field>
+              <br>
+
+    
+              <mat-form-field *ngIf="valorLectura" class="example-chip-list" appearance="fill">
+                <mat-label>{{languageGlobal.librosLeidos}}</mat-label>
+    
+                <mat-chip-list #chipList aria-label="Video keywords" multiple >
+                  <mat-chip
+                      *ngFor="let keyword of keywords"
+                      [selected]="keyword"
+                      [value]="keyword"
+                      (removed)="removeKeyword(keyword)">
+                    {{keyword}}
+                  </mat-chip>
+                  <input
+                    placeholder="New keyword..."
+                    [matChipInputFor]="chipList"
+                    (matChipInputTokenEnd)="addKeywordFromInput($event)">
+                </mat-chip-list>
+              </mat-form-field>
+    
+    
+    <br>
+    
+    
+              <!-- Estado Civil -->
+              <mat-form-field>
+                <mat-label>{{languageGlobal.edoCivil}}</mat-label>
+                <mat-select (selectionChange)="valorEdoCivil($event.value)" matInput type="text" formControlName="edoCivil" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.edoCivil.errors }"  >
+                  <mat-option *ngFor="let option of optionEdoCivil" [value]="option.id">{{ option.name }}
+                  </mat-option>
+                </mat-select>
+                <mat-error>
+                  <div *ngIf="submitted && f.edoCivil.errors" class="invalid-feedback">
+                  </div>
+                </mat-error>
+              </mat-form-field>
+              <br>
+    <button (click)="onSubmiti()"  mat-raised-button style=" background-color: cornflowerblue!important; color: white!important;">{{languageGlobal.enviar}}</button>
+
+    
+        </form>
+    
+    
+    </div>
+  </div>
+
+
+

@@ -1,0 +1,365 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  background-color: white;
+	overflow-x: hidden;
+	margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+h3, span{
+  color: black;
+}
+.mat-toolbar.mat-primary {
+	background-color: cornflowerblue!important;
+  color: #fff;
+}
+.companyName{
+    font-size: 150%;
+}
+
+.mat-toolbar{
+  height: 7vh;
+}
+
+div {
+    overflow: inherit;
+}
+.container{
+  padding-top: 50px;
+}
+
+.search-results {
+  overflow: scroll;
+}
+.mat-form-field-wrapper {
+  width: 385px!important;
+}
+a{
+    text-decoration: none;
+    font-size: 110%;
+    white-space: normal;
+}
+
+button{
+    font-size: 110%;
+    min-width: min-content;
+}
+
+.example-icon {
+    padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .mat-sidenav-content{
+      font-size: 200%;
+      text-align: center;
+  }
+  .headertable{
+    text-align: center!important;
+}
+
+.styleTable,
+.ui-paginator-bottom{
+    border-left: none!important;
+    border-right:  none !important;
+    text-align: center!important;
+}
+
+.styleButtonTable,
+.styleButtonModal{
+    background-color: cornflowerblue!important;
+    color: white!important;
+    padding: .25rem .5rem!important;
+    font-size: .875rem!important;
+    line-height: 1.5!important;
+    border-radius: .2rem!important;
+    border: 1px solid transparent!important;
+    cursor: pointer!important;
+}
+table{
+  padding-left: 10%;
+  border-collapse: inherit!important;
+}
+
+.nueva-solicitud-principal {
+  margin: 1px 5px 5px 5px; 
+}
+
+.mat-header-cell,.mat-cell{
+  justify-content: center!important;
+}
+
+.search{
+  padding-top: 10px;
+}
+
+.nueva-solicitud-secundaria {
+  margin: 10px 0px 0px 0px;
+}
+
+.nueva-solicitud-secundaria2 {
+ margin: 10px 0px 0px 0px;
+}
+
+.nueva-solicitud-terciaria {
+  margin: 10px 0px 0px 0px;
+}
+
+
+mat-icon{
+  color: orangered;
+}
+
+
+
+
+button{
+  line-height: 20px;
+  font-weight: 700;
+  font-size: 16px;
+  border: 1px solid #FF6B0B;
+  background: #FFFFFF!important;
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: #FF6B0B;
+  font-family: Arial,sans-serif;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+.enviar{
+ color: #FF6B0B;
+}
+
+mat-card-header{
+background: cornflowerblue;
+text-align: center;
+}
+
+.tabla1{
+  background: #fff;
+  max-width: auto!important;
+  text-align: center!important;
+  width: 980px;
+}
+
+
+mat-card-subtitle{
+padding-top: 10px;
+color: white!important;
+text-align: center;
+}
+
+.aAAaGVIZSENTINELaAAa-serverchart-image{
+  width: 800px;
+  height: 350px;
+  padding-left: 250px;
+}
+
+
+.buscar {
+  background: #064F90;
+}
+
+.mat-checkbox {
+  display: inherit!important;
+  align-items: center;
+}
+   .switch,
+   .switch * {
+     -webkit-tap-highlight-color: transparent;
+     -webkit-user-select: none;
+        -moz-user-select: none;
+         -ms-user-select: none;
+             user-select: none;
+   }
+   
+   .switch label {
+     cursor: pointer;
+   }
+   
+   .switch label input[type=checkbox] {
+     opacity: 0;
+     width: 0;
+     height: 0;
+   }
+   
+   .switch label input[type=checkbox]:checked + .lever {
+     background-color: #84c7c1;
+   }
+   
+   .switch label input[type=checkbox]:checked + .lever:before, .switch label input[type=checkbox]:checked + .lever:after {
+     left: 18px;
+   }
+   
+   .switch label input[type=checkbox]:checked + .lever:after {
+     background-color: #4d88ff;
+   }
+   
+   .switch label .lever {
+     content: "";
+     display: inline-block;
+     position: relative;
+     width: 36px;
+     height: 14px;
+     background-color: #4d88ff;
+     border-radius: 15px;
+     margin-right: 10px;
+     -webkit-transition: background 0.3s ease;
+     transition: background 0.3s ease;
+     vertical-align: middle;
+     margin: 0 16px;
+   }
+   
+   .switch label .lever:before, .switch label .lever:after {
+     content: "";
+     position: absolute;
+     display: inline-block;
+     width: 20px;
+     height: 20px;
+     border-radius: 50%;
+     left: 0;
+     top: -3px;
+     -webkit-transition: left 0.3s ease, background .3s ease, -webkit-box-shadow 0.1s ease, -webkit-transform .1s ease;
+     transition: left 0.3s ease, background .3s ease, -webkit-box-shadow 0.1s ease, -webkit-transform .1s ease;
+     transition: left 0.3s ease, background .3s ease, box-shadow 0.1s ease, transform .1s ease;
+     transition: left 0.3s ease, background .3s ease, box-shadow 0.1s ease, transform .1s ease, -webkit-box-shadow 0.1s ease, -webkit-transform .1s ease;
+   }
+   
+   .switch label .lever:before {
+     background-color: rgba(38, 166, 154, 0.15);
+   }
+   
+   .switch label .lever:after {
+     background-color: #F1F1F1;
+     -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+             box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+   }
+   
+   input[type=checkbox]:checked:not(:disabled) ~ .lever:active::before,
+   input[type=checkbox]:checked:not(:disabled).tabbed:focus ~ .lever::before {
+     -webkit-transform: scale(2.4);
+             transform: scale(2.4);
+     background-color: rgba(38, 166, 154, 0.15);
+   }
+   
+   input[type=checkbox]:not(:disabled) ~ .lever:active:before,
+   input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::before {
+     -webkit-transform: scale(2.4);
+             transform: scale(2.4);
+     background-color: rgba(0, 0, 0, 0.08);
+   }
+   
+   .switch input[type=checkbox][disabled] + .lever {
+     cursor: default;
+     background-color: rgba(0, 0, 0, 0.12);
+   }
+   
+   .switch label input[type=checkbox][disabled] + .lever:after,
+   .switch label input[type=checkbox][disabled]:checked + .lever:after {
+     background-color: #949494;
+   }
+   
+   @media screen and (max-width: 600px) {
+    mat-card-subtitle{
+      padding-left: 80%!important;
+      }
+
+      .btnLogOut{
+        text-align: inherit!important;
+        color: white!important;
+        margin-left: 15px;
+        padding-left: 1px;
+          }
+          .login-form{
+            width: 300px!important;
+        }
+        .login-container{
+          width: 325px!important;
+      }
+      .mat-card-header-text {
+        margin: 0 35px!important;
+    }
+    .example-container{
+      max-width: 250px!important;
+      overflow: scroll!important;
+  }
+  .tabla1 {
+      width: 350px!important;
+  }
+  .mat-card {
+    padding: 0px!important;
+}
+.container {
+  max-width: 350px!important;
+}
+
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  width: 490px;
+}
+
+.example-button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+.welcome{
+  padding-top: 10%;
+  padding-left: 40%;
+  font-size: 30px;
+  color: #FFFFFF;
+
+}
+
+.name{
+  padding-top: 10%;
+  padding-left: 40%;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+.buttonUs{
+  margin-left: 45%;
+  margin-top: 15px;
+  color: #FFFFFF!important;
+  background-color: #3f51b5!important;
+  border: none!important;
+  border-radius: 4px!important;
+}
+
+.mat-form-field {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  padding-right: 20px;
+}
